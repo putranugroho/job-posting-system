@@ -1,0 +1,34 @@
+{
+  "jobs": [
+    {
+      "id": 1,
+      "title": "Frontend Developer",
+      "description": "Responsible for developing and maintaining the frontend of web applications. Proficiency in HTML, CSS, JavaScript, and Vue.js is required.",
+      "applications": [
+        {
+          "name": "Alice Smith",
+          "email": "alice@example.com",
+          "coverLetter": "I am very interested in this position and have 3 years of experience in frontend development."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Backend Developer",
+      "description": "Looking for an experienced backend developer with a strong understanding of REST APIs, databases, and server-side programming using Node.js.",
+      "applications": [
+        {
+          "name": "Bob Johnson",
+          "email": "bob@example.com",
+          "coverLetter": "With 5 years of backend experience, I am skilled in Node.js and database management."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Data Scientist",
+      "description": "Seeking a data scientist proficient in data analysis, machine learning, and Python. Experience with TensorFlow and Pandas is a plus.",
+      "applications": []
+    }
+  ]
+}
