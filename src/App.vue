@@ -1,26 +1,56 @@
+<!-- src/App.vue -->
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+    <header>
+      <h1>Job Posting System</h1>
+      <nav>
+        <router-link to="/">Home</router-link>
+        <router-link to="/post-job">Post a Job</router-link>
+      </nav>
+    </header>
+
+    <main>
+      <!-- This renders the active route component based on the URL -->
+      <router-view />
+    </main>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "App",
+};
 </script>
 
 <style>
+/* Basic styles for layout and appearance */
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: Arial, sans-serif;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+}
+
+header {
+  background-color: #4caf50;
+  padding: 20px;
+  color: white;
+}
+
+nav {
+  margin: 10px 0;
+}
+
+nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+nav a.router-link-active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+main {
+  padding: 20px;
 }
 </style>

@@ -7,11 +7,6 @@
       <router-link
         :to="{ name: 'JobApply', params: { id: job.id } }"
         class="view-job-button"
-        git
-        pull
-        origin
-        main
-        --rebase
         >View Job</router-link
       >
     </div>
