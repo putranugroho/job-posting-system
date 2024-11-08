@@ -23,6 +23,14 @@
           type="email"
         />
 
+        <label for="resume">Resume</label>
+        <input
+          type="file"
+          id="resume"
+          @change="handleFileUpload"
+          required
+        />
+
         <label for="coverLetter">Cover Letter</label>
         <textarea
           id="coverLetter"
@@ -48,6 +56,7 @@ export default {
         name: "",
         email: "",
         coverLetter: "",
+        resume: null, // To store the uploaded file
       },
     };
   },
@@ -60,12 +69,26 @@ export default {
       const response = await axios.get(`http://localhost:3000/jobs/${jobId}`);
       this.job = response.data;
     },
+    handleFileUpload(event) {
+      this.application.resume = event.target.files[0]; // Store the selected file
+    },
     async submitApplication() {
-      const jobId = this.$route.params.id;
-      await axios.post(
-        `http://localhost:3000/jobs/${jobId}/apply`,
-        this.application
-      );
+      // const jobId = this.$route.params.id;
+
+      // Prepare the FormData object
+      const formData = new FormData();
+      formData.append("name", this.application.name);
+      formData.append("email", this.application.email);
+      formData.append("coverLetter", this.application.coverLetter);
+      formData.append("resume", this.application.resume); // Attach the file
+
+      // Send the FormData with axios
+      /*await axios.post(`http://localhost:3000/jobs/${jobId}/apply`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });*/
+
       alert("Application submitted!");
       this.$router.push("/");
     },
